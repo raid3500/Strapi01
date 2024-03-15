@@ -1,0 +1,106 @@
+{
+  "kind": "collectionType",
+  "collectionName": "communities",
+  "info": {
+    "singularName": "community",
+    "pluralName": "communities",
+    "displayName": "Community",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "communities"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "community"
+    },
+    "media": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::media.media",
+      "mappedBy": "community"
+    },
+    "podcasts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::podcast.podcast",
+      "mappedBy": "community"
+    },
+    "published_materials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::published-material.published-material",
+      "mappedBy": "community"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "community"
+    },
+    "core_activities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::core-activity.core-activity",
+      "mappedBy": "community"
+    },
+    "insights_vision_and_goals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::insights-vision-and-goal.insights-vision-and-goal",
+      "mappedBy": "community"
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program",
+      "mappedBy": "community"
+    },
+    "publications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::publication.publication",
+      "mappedBy": "community"
+    },
+    "online_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::online-event.online-event",
+      "mappedBy": "community"
+    },
+    "local_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::local-event.local-event",
+      "mappedBy": "community"
+    },
+    "people": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::people.people",
+      "mappedBy": "community"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location",
+      "mappedBy": "community"
+    }
+  }
+}

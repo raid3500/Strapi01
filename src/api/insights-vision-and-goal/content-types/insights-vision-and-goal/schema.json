@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insights_vision_and_goals",
+  "info": {
+    "singularName": "insights-vision-and-goal",
+    "pluralName": "insights-vision-and-goals",
+    "displayName": "Insights, Vision, and Goal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "community": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::community.community",
+      "inversedBy": "insights_vision_and_goals"
+    }
+  }
+}

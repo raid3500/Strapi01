@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "core_activities",
+  "info": {
+    "singularName": "core-activity",
+    "pluralName": "core-activities",
+    "displayName": "Core Activity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "community": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::community.community",
+      "inversedBy": "core_activities"
+    }
+  }
+}
