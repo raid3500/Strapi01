@@ -15,9 +15,9 @@ module.exports = async (policyContext, config, { strapi }) => {
 
     console.log(entry);
 
-    if(entry.Owner == null) return false;
+    if(entry.users_permissions_user == null) return false;
 
-    if(entry.Owner.id === policyContext.state.user.id) return true;
+    if(entry.users_permissions_user.id === policyContext.state.user.id) return true;
 
     return false;
 };
