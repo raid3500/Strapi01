@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-03-19T11:16:41.921Z"
+    "x-generation-date": "2024-03-20T11:47:18.940Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1707,6 +1707,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "TestBool": {
+                                                      "type": "boolean"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -5083,6 +5086,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "TestBool": {
+                                                    "type": "boolean"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -8196,6 +8202,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "TestBool": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -11325,6 +11334,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "TestBool": {
+                                                    "type": "boolean"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -14444,6 +14456,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "TestBool": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -17967,6 +17982,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "TestBool": {
+                                                    "type": "boolean"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -20880,6 +20898,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "TestBool": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -24772,6 +24793,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "TestBool": {
+                                                    "type": "boolean"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -28035,6 +28059,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "TestBool": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -31319,6 +31346,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "TestBool": {
+                                                    "type": "boolean"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -33618,6 +33648,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "TestBool": {
+                "type": "boolean"
               }
             }
           }
@@ -34229,6 +34262,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "TestBool": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -36654,6 +36690,9 @@
               }
             }
           },
+          "TestBool": {
+            "type": "boolean"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -37756,6 +37795,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "TestBool": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -41252,6 +41294,9 @@
                                                       }
                                                     }
                                                   },
+                                                  "TestBool": {
+                                                    "type": "boolean"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -44542,6 +44587,9 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "TestBool": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",

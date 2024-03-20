@@ -17,7 +17,7 @@ module.exports = createCoreController('api::post.post', {
 
         const updated = await strapi.entityService.update('api::post.post', task.data.id, {
             data: {
-                users_permissions_user: user.id
+                Owner: user.id
             }
         });
 
