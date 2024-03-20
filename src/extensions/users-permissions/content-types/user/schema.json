@@ -68,6 +68,12 @@
       "relation": "manyToMany",
       "target": "api::community.community",
       "inversedBy": "users_permissions_users"
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "Owner"
     }
   }
 }

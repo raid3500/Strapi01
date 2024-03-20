@@ -850,6 +850,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToMany',
       'api::community.community'
     >;
+    posts: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::post.post'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1409,6 +1414,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     singularName: 'post';
     pluralName: 'posts';
     displayName: 'Post';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1416,15 +1422,15 @@ export interface ApiPostPost extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Content: Attribute.Text;
-    users_permissions_user: Attribute.Relation<
-      'api::post.post',
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
     community: Attribute.Relation<
       'api::post.post',
       'manyToOne',
       'api::community.community'
+    >;
+    Owner: Attribute.Relation<
+      'api::post.post',
+      'manyToOne',
+      'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
