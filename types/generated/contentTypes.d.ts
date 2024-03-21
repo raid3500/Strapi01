@@ -1035,12 +1035,13 @@ export interface ApiCoreActivityCoreActivity extends Schema.CollectionType {
     singularName: 'core-activity';
     pluralName: 'core-activities';
     displayName: 'Core Activity';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
+    Name: Attribute.String;
     Description: Attribute.Text;
     communities: Attribute.Relation<
       'api::core-activity.core-activity',
@@ -1072,12 +1073,13 @@ export interface ApiInsightsVisionAndGoalInsightsVisionAndGoal
     singularName: 'insights-vision-and-goal';
     pluralName: 'insights-vision-and-goals';
     displayName: 'Insights, Vision, and Goal';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
+    Name: Attribute.String;
     Description: Attribute.Text;
     communities: Attribute.Relation<
       'api::insights-vision-and-goal.insights-vision-and-goal',
@@ -1480,12 +1482,13 @@ export interface ApiProgramProgram extends Schema.CollectionType {
     singularName: 'program';
     pluralName: 'programs';
     displayName: 'Program';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
+    Name: Attribute.String;
     Description: Attribute.Text;
     communities: Attribute.Relation<
       'api::program.program',
