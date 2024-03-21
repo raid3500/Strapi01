@@ -56,21 +56,21 @@
     },
     "core_activities": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::core-activity.core-activity",
-      "mappedBy": "community"
+      "mappedBy": "communities"
     },
     "insights_vision_and_goals": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::insights-vision-and-goal.insights-vision-and-goal",
-      "mappedBy": "community"
+      "mappedBy": "communities"
     },
     "programs": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::program.program",
-      "mappedBy": "community"
+      "mappedBy": "communities"
     },
     "publications": {
       "type": "relation",
@@ -98,9 +98,9 @@
     },
     "locations": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::location.location",
-      "mappedBy": "community"
+      "mappedBy": "communities"
     }
   }
 }

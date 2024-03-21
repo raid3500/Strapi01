@@ -20,9 +20,9 @@
     "Description": {
       "type": "text"
     },
-    "community": {
+    "communities": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::community.community",
       "inversedBy": "locations"
     }

@@ -973,17 +973,17 @@ export interface ApiCommunityCommunity extends Schema.CollectionType {
     >;
     core_activities: Attribute.Relation<
       'api::community.community',
-      'oneToMany',
+      'manyToMany',
       'api::core-activity.core-activity'
     >;
     insights_vision_and_goals: Attribute.Relation<
       'api::community.community',
-      'oneToMany',
+      'manyToMany',
       'api::insights-vision-and-goal.insights-vision-and-goal'
     >;
     programs: Attribute.Relation<
       'api::community.community',
-      'oneToMany',
+      'manyToMany',
       'api::program.program'
     >;
     publications: Attribute.Relation<
@@ -1008,7 +1008,7 @@ export interface ApiCommunityCommunity extends Schema.CollectionType {
     >;
     locations: Attribute.Relation<
       'api::community.community',
-      'oneToMany',
+      'manyToMany',
       'api::location.location'
     >;
     createdAt: Attribute.DateTime;
@@ -1042,9 +1042,9 @@ export interface ApiCoreActivityCoreActivity extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Description: Attribute.Text;
-    community: Attribute.Relation<
+    communities: Attribute.Relation<
       'api::core-activity.core-activity',
-      'manyToOne',
+      'manyToMany',
       'api::community.community'
     >;
     createdAt: Attribute.DateTime;
@@ -1079,9 +1079,9 @@ export interface ApiInsightsVisionAndGoalInsightsVisionAndGoal
   attributes: {
     Title: Attribute.String;
     Description: Attribute.Text;
-    community: Attribute.Relation<
+    communities: Attribute.Relation<
       'api::insights-vision-and-goal.insights-vision-and-goal',
-      'manyToOne',
+      'manyToMany',
       'api::community.community'
     >;
     createdAt: Attribute.DateTime;
@@ -1154,9 +1154,9 @@ export interface ApiLocationLocation extends Schema.CollectionType {
     Name: Attribute.String;
     Address: Attribute.String;
     Description: Attribute.Text;
-    community: Attribute.Relation<
+    communities: Attribute.Relation<
       'api::location.location',
-      'manyToOne',
+      'manyToMany',
       'api::community.community'
     >;
     createdAt: Attribute.DateTime;
@@ -1432,7 +1432,6 @@ export interface ApiPostPost extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
-    TestBool: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1488,9 +1487,9 @@ export interface ApiProgramProgram extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Description: Attribute.Text;
-    community: Attribute.Relation<
+    communities: Attribute.Relation<
       'api::program.program',
-      'manyToOne',
+      'manyToMany',
       'api::community.community'
     >;
     createdAt: Attribute.DateTime;
