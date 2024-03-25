@@ -1011,6 +1011,8 @@ export interface ApiCommunityCommunity extends Schema.CollectionType {
       'manyToMany',
       'api::location.location'
     >;
+    community_logo: Attribute.Media;
+    community_header: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
