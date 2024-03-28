@@ -4,7 +4,8 @@
   "info": {
     "singularName": "publication",
     "pluralName": "publications",
-    "displayName": "Publication"
+    "displayName": "Publication",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,18 +18,22 @@
     "Description": {
       "type": "text"
     },
-    "File": {
-      "allowedTypes": [
-        "files"
-      ],
+    "Book_Cover": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "community": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::community.community",
       "inversedBy": "publications"
+    },
+    "URL": {
+      "type": "string"
     }
   }
 }

@@ -111,11 +111,39 @@
       ]
     },
     "community_header": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Intro": {
+      "type": "text"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video",
+      "mappedBy": "community"
+    },
+    "A_Day_in_the_Life": {
+      "type": "text"
+    },
+    "Mission_Core_Values": {
+      "type": "text"
+    },
+    "History": {
+      "type": "text"
+    },
+    "Learn_More": {
+      "type": "text"
+    },
+    "contacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contact.contact",
+      "mappedBy": "community"
     }
   }
 }

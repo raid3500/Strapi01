@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Phone": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "community": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::community.community",
+      "inversedBy": "contacts"
+    }
+  }
+}

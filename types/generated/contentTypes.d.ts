@@ -1013,6 +1013,21 @@ export interface ApiCommunityCommunity extends Schema.CollectionType {
     >;
     community_logo: Attribute.Media;
     community_header: Attribute.Media;
+    Intro: Attribute.Text;
+    videos: Attribute.Relation<
+      'api::community.community',
+      'oneToMany',
+      'api::video.video'
+    >;
+    A_Day_in_the_Life: Attribute.Text;
+    Mission_Core_Values: Attribute.Text;
+    History: Attribute.Text;
+    Learn_More: Attribute.Text;
+    contacts: Attribute.Relation<
+      'api::community.community',
+      'oneToMany',
+      'api::contact.contact'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1024,6 +1039,42 @@ export interface ApiCommunityCommunity extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::community.community',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'Contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Phone: Attribute.String;
+    Email: Attribute.String;
+    community: Attribute.Relation<
+      'api::contact.contact',
+      'manyToOne',
+      'api::community.community'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
       'oneToOne',
       'admin::user'
     > &
@@ -1521,6 +1572,7 @@ export interface ApiPublicationPublication extends Schema.CollectionType {
     singularName: 'publication';
     pluralName: 'publications';
     displayName: 'Publication';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1528,12 +1580,13 @@ export interface ApiPublicationPublication extends Schema.CollectionType {
   attributes: {
     Title: Attribute.String;
     Description: Attribute.Text;
-    File: Attribute.Media;
+    Book_Cover: Attribute.Media;
     community: Attribute.Relation<
       'api::publication.publication',
       'manyToOne',
       'api::community.community'
     >;
+    URL: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1628,6 +1681,43 @@ export interface ApiTermsOfUseTermsOfUse extends Schema.SingleType {
   };
 }
 
+export interface ApiVideoVideo extends Schema.CollectionType {
+  collectionName: 'videos';
+  info: {
+    singularName: 'video';
+    pluralName: 'videos';
+    displayName: 'Video';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    URL: Attribute.String;
+    community: Attribute.Relation<
+      'api::video.video',
+      'manyToOne',
+      'api::community.community'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::video.video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::video.video',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1651,6 +1741,7 @@ declare module '@strapi/types' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::ad.ad': ApiAdAd;
       'api::community.community': ApiCommunityCommunity;
+      'api::contact.contact': ApiContactContact;
       'api::core-activity.core-activity': ApiCoreActivityCoreActivity;
       'api::insights-vision-and-goal.insights-vision-and-goal': ApiInsightsVisionAndGoalInsightsVisionAndGoal;
       'api::local-event.local-event': ApiLocalEventLocalEvent;
@@ -1667,6 +1758,7 @@ declare module '@strapi/types' {
       'api::publication.publication': ApiPublicationPublication;
       'api::published-material.published-material': ApiPublishedMaterialPublishedMaterial;
       'api::terms-of-use.terms-of-use': ApiTermsOfUseTermsOfUse;
+      'api::video.video': ApiVideoVideo;
     }
   }
 }
