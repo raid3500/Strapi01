@@ -135,6 +135,24 @@
       "relation": "oneToMany",
       "target": "api::mission-core-value.mission-core-value",
       "mappedBy": "community"
+    },
+    "history": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::history.history",
+      "mappedBy": "community"
+    },
+    "intro": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::intro.intro",
+      "mappedBy": "community"
+    },
+    "learn_more": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::learn-more.learn-more",
+      "mappedBy": "community"
     }
   }
 }

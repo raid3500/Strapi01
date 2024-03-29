@@ -1,10 +1,11 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "histories",
   "info": {
     "singularName": "history",
     "pluralName": "histories",
-    "displayName": "History"
+    "displayName": "History",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,7 +21,8 @@
     "community": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::community.community"
+      "target": "api::community.community",
+      "inversedBy": "history"
     }
   }
 }

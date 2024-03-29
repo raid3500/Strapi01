@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "learn_mores",
   "info": {
     "singularName": "learn-more",
@@ -20,7 +20,8 @@
     "community": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::community.community"
+      "target": "api::community.community",
+      "inversedBy": "learn_more"
     }
   }
 }

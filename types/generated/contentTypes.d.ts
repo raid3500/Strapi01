@@ -1028,6 +1028,21 @@ export interface ApiCommunityCommunity extends Schema.CollectionType {
       'oneToMany',
       'api::mission-core-value.mission-core-value'
     >;
+    history: Attribute.Relation<
+      'api::community.community',
+      'oneToOne',
+      'api::history.history'
+    >;
+    intro: Attribute.Relation<
+      'api::community.community',
+      'oneToOne',
+      'api::intro.intro'
+    >;
+    learn_more: Attribute.Relation<
+      'api::community.community',
+      'oneToOne',
+      'api::learn-more.learn-more'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1119,12 +1134,13 @@ export interface ApiCoreActivityCoreActivity extends Schema.CollectionType {
   };
 }
 
-export interface ApiHistoryHistory extends Schema.SingleType {
+export interface ApiHistoryHistory extends Schema.CollectionType {
   collectionName: 'histories';
   info: {
     singularName: 'history';
     pluralName: 'histories';
     displayName: 'History';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1193,12 +1209,13 @@ export interface ApiInsightsVisionAndGoalInsightsVisionAndGoal
   };
 }
 
-export interface ApiIntroIntro extends Schema.SingleType {
+export interface ApiIntroIntro extends Schema.CollectionType {
   collectionName: 'intros';
   info: {
     singularName: 'intro';
     pluralName: 'intros';
     displayName: 'Intro';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1229,7 +1246,7 @@ export interface ApiIntroIntro extends Schema.SingleType {
   };
 }
 
-export interface ApiLearnMoreLearnMore extends Schema.SingleType {
+export interface ApiLearnMoreLearnMore extends Schema.CollectionType {
   collectionName: 'learn_mores';
   info: {
     singularName: 'learn-more';
