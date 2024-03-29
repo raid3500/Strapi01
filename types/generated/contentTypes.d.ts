@@ -1013,20 +1013,20 @@ export interface ApiCommunityCommunity extends Schema.CollectionType {
     >;
     community_logo: Attribute.Media;
     community_header: Attribute.Media;
-    Intro: Attribute.Text;
     videos: Attribute.Relation<
       'api::community.community',
       'oneToMany',
       'api::video.video'
     >;
-    A_Day_in_the_Life: Attribute.Text;
-    Mission_Core_Values: Attribute.Text;
-    History: Attribute.Text;
-    Learn_More: Attribute.Text;
     contacts: Attribute.Relation<
       'api::community.community',
       'oneToMany',
       'api::contact.contact'
+    >;
+    mission_core_values: Attribute.Relation<
+      'api::community.community',
+      'oneToMany',
+      'api::mission-core-value.mission-core-value'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1119,6 +1119,42 @@ export interface ApiCoreActivityCoreActivity extends Schema.CollectionType {
   };
 }
 
+export interface ApiHistoryHistory extends Schema.SingleType {
+  collectionName: 'histories';
+  info: {
+    singularName: 'history';
+    pluralName: 'histories';
+    displayName: 'History';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    community: Attribute.Relation<
+      'api::history.history',
+      'oneToOne',
+      'api::community.community'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::history.history',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::history.history',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiInsightsVisionAndGoalInsightsVisionAndGoal
   extends Schema.CollectionType {
   collectionName: 'insights_vision_and_goals';
@@ -1150,6 +1186,78 @@ export interface ApiInsightsVisionAndGoalInsightsVisionAndGoal
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::insights-vision-and-goal.insights-vision-and-goal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIntroIntro extends Schema.SingleType {
+  collectionName: 'intros';
+  info: {
+    singularName: 'intro';
+    pluralName: 'intros';
+    displayName: 'Intro';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    community: Attribute.Relation<
+      'api::intro.intro',
+      'oneToOne',
+      'api::community.community'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::intro.intro',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::intro.intro',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLearnMoreLearnMore extends Schema.SingleType {
+  collectionName: 'learn_mores';
+  info: {
+    singularName: 'learn-more';
+    pluralName: 'learn-mores';
+    displayName: 'Learn More';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    community: Attribute.Relation<
+      'api::learn-more.learn-more',
+      'oneToOne',
+      'api::community.community'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::learn-more.learn-more',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::learn-more.learn-more',
       'oneToOne',
       'admin::user'
     > &
@@ -1269,6 +1377,44 @@ export interface ApiMediaMedia extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::media.media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMissionCoreValueMissionCoreValue
+  extends Schema.CollectionType {
+  collectionName: 'mission_core_values';
+  info: {
+    singularName: 'mission-core-value';
+    pluralName: 'mission-core-values';
+    displayName: 'Mission Core Values';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Description: Attribute.Text;
+    community: Attribute.Relation<
+      'api::mission-core-value.mission-core-value',
+      'manyToOne',
+      'api::community.community'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mission-core-value.mission-core-value',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mission-core-value.mission-core-value',
       'oneToOne',
       'admin::user'
     > &
@@ -1744,10 +1890,14 @@ declare module '@strapi/types' {
       'api::community.community': ApiCommunityCommunity;
       'api::contact.contact': ApiContactContact;
       'api::core-activity.core-activity': ApiCoreActivityCoreActivity;
+      'api::history.history': ApiHistoryHistory;
       'api::insights-vision-and-goal.insights-vision-and-goal': ApiInsightsVisionAndGoalInsightsVisionAndGoal;
+      'api::intro.intro': ApiIntroIntro;
+      'api::learn-more.learn-more': ApiLearnMoreLearnMore;
       'api::local-event.local-event': ApiLocalEventLocalEvent;
       'api::location.location': ApiLocationLocation;
       'api::media.media': ApiMediaMedia;
+      'api::mission-core-value.mission-core-value': ApiMissionCoreValueMissionCoreValue;
       'api::online-event.online-event': ApiOnlineEventOnlineEvent;
       'api::our-philosophy.our-philosophy': ApiOurPhilosophyOurPhilosophy;
       'api::people.people': ApiPeoplePeople;

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "learn_mores",
+  "info": {
+    "singularName": "learn-more",
+    "pluralName": "learn-mores",
+    "displayName": "Learn More"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "community": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::community.community"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mission_core_values",
+  "info": {
+    "singularName": "mission-core-value",
+    "pluralName": "mission-core-values",
+    "displayName": "Mission Core Values",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "community": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::community.community",
+      "inversedBy": "mission_core_values"
+    }
+  }
+}

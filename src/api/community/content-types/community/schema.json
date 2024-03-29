@@ -118,31 +118,22 @@
         "images"
       ]
     },
-    "Intro": {
-      "type": "text"
-    },
     "videos": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::video.video",
       "mappedBy": "community"
     },
-    "A_Day_in_the_Life": {
-      "type": "text"
-    },
-    "Mission_Core_Values": {
-      "type": "text"
-    },
-    "History": {
-      "type": "text"
-    },
-    "Learn_More": {
-      "type": "text"
-    },
     "contacts": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::contact.contact",
+      "mappedBy": "community"
+    },
+    "mission_core_values": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mission-core-value.mission-core-value",
       "mappedBy": "community"
     }
   }
